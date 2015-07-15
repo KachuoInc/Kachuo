@@ -1,28 +1,22 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('GoodsListController',function($scope,goodsListFactory){
+  $scope.goodsListURL = goodsListFactory.getGoodsListURL(4,1,1,1,1);
+  goodsListFactory.getGoodsList($scope.goodsListURL).success(function (data) {
+    $scope.goodsList = data;
+    $scope.goodsListDatasGoodsList = data.datas.goods_list;
+  }).error(function (err) {
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-  
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
+  });
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('GoodsDetailController',function($scope,$stateParams,goodsDetailFactory){
+      $scope.goodsDetailURL = goodsDetailFactory.getGoodsDetailURl($stateParams.goodsID);
+      goodsDetailFactory.getGoodsDetail($scope.goodsDetailURL).success(function(data){
+        $scope.goodsDetail = data;
+        console.log($scope.goodsDetail);
+      }).error(function(err){
+
+      });
 });
