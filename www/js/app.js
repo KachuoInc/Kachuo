@@ -47,15 +47,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-
-  .state('goodsDetailState',{
-    url:'/goodsListView/:goodsID',
-    views:{
-      'tab-goodsdetail':{
-        templateUrl:'templates/tab-goodsdetail.html',
-        controller:'GoodsDetailController'
-      }
-    }
+  .state('tab.goodsDetailState',{
+     url:'/goodsListView/{goodsID}',
+        views:{
+          'tab-goodslist':{
+            templateUrl:'templates/tab-goodsdetail.html',
+            controller:'GoodsDetailController'
+          }
+        }
   })
 
   .state('tab.artistListState', {
