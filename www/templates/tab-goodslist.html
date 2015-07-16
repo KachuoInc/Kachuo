@@ -1,0 +1,17 @@
+
+<ion-view view-title="艺术品">
+<ion-content>
+    <ion-list>
+        <ion-item class = "item-remove-animate item-avatar item-icon-right"
+                   ng-repeat = "goodsInfo in goodsListDatasGoodsList"
+                   type = "item-text-wrap"
+                   href = "#/tab/goodsListView/{{goodsInfo.goods_id}}">
+            <img ng-src = "{{goodsInfo.goods_image_url}}">
+            <h2>{{goodsInfo.goods_name}}</h2>
+            <p>{{goodsInfo.goods_price}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+</ion-view>
