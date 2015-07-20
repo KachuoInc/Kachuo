@@ -1,4 +1,10 @@
-<ion-view view-title="登录" ng-click="closeModal()">
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">登录</h1>
+        <div class="buttons">
+            <button class="button button-clear icon-left" >back</button>
+        </div>
+    </ion-header-bar>
     <ion-content>
         <label class="item item-input">
             <span class="input-label" >用户名</span>
@@ -9,4 +15,4 @@
             <input type="password" ng-model="userinfo.password">
         </label>
     </ion-content>
-</ion-view>
+</ion-modal-view>
