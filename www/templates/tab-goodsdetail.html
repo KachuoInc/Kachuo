@@ -1,5 +1,13 @@
 <ion-view view-title="艺术品详情">
     <ion-content>
-        {{asdfghjkl;}}
+        <ion-slide-box show-pager="false">
+            <ion-slide ng-repeat="goodsDetailImageURL in goodsDetailImages">
+                <img src="{{goodsDetailImageURL}}">
+            </ion-slide>
+        </ion-slide-box>
+        <hr />
+        <p><b>名称:</b>{{goodsDetail.goods_info.goods_name}}</p>
+        <p><b>价格:</b>{{goodsDetail.goods_info.goods_price}}</p>
+        <button class="button button-full button-assertive" ng-click="">购买</button>
     </ion-content>
 </ion-view>

@@ -33,7 +33,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('tab', {
     url: "/tab",
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: "templates/tabs.html",
+        controller:'SideMenuController'
   })
 
   // Each tab has its own nav history stack:
@@ -48,7 +49,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
   .state('tab.goodsDetailState',{
-     url:'/goodsListView/{goodsID}',
+     url:'/goodsListView/:goodsID',
         views:{
           'tab-goodslist':{
             templateUrl:'templates/tab-goodsdetail.html',
@@ -62,9 +63,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views:{
       'tab-artistlist':{
         templateUrl:'templates/tab-artistlist.html',
-        controller:'ArtistListController',
+        controller:'ArtistListController'
       }
     }
+  })
+  .state('loginState',{
+    url:'/loginView',
+    templateUrl:'templates/login.html',
+    controller:'LoginController'
   });
 
   // if none of the above states are matched, use this as the fallback
